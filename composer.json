@@ -1,0 +1,15 @@
+{
+    "name": "dowilcox/knp-menu-laravel",
+    "description": "Laravel package to create navigation menus, based on KnpLabs/KnpMenu.",
+    "require": {
+        "knplabs/knp-menu": "~2.0",
+        "illuminate/support": "5.0.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Donald Wilcox",
+            "email": "dowilcox@umflint.edu"
+        }
+    ]
+}
