@@ -103,7 +103,7 @@ class Menu implements MenuInterface
      */
     public function render(ItemInterface $menu, $options = [])
     {
-        $renderOptions = array_merge($this->renderConfig, $options);
+        $renderOptions = array_merge($this->renderOptions, $options);
 
         return $this->renderer->render($menu, $renderOptions);
     }
