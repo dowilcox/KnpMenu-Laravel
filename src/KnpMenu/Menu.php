@@ -78,8 +78,9 @@ class Menu implements MenuInterface
     public function create($name, $options = [])
     {
         $menu = $this->factory->createItem($name, $options);
+        $this->collection->put($name, $menu);
 
-        return $this->collection->put($name, $menu);
+        return $menu;
     }
 
     /**
