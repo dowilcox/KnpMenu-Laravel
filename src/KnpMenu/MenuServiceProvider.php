@@ -10,6 +10,9 @@ use Knp\Menu\Renderer\ListRenderer;
 class MenuServiceProvider extends ServiceProvider
 {
 
+    /**
+     * Bootstrap services
+     */
     public function boot()
     {
         $this->publishes([
@@ -17,9 +20,12 @@ class MenuServiceProvider extends ServiceProvider
         ]);
     }
 
+    /**
+     * Register application services.
+     */
     public function register()
     {
-        $this->app->singleton('Dowilcox\KnpMenu\Menu', function ($app) {
+        $this->app->singleton('menu', function ($app) {
             $renderOptions = $app['config']['menu.render'];
             $url = $app['url'];
 
@@ -34,6 +40,10 @@ class MenuServiceProvider extends ServiceProvider
             $renderer = new ListRenderer($matcher);
 
             return new Menu($renderOptions, $collection, $factory, $matcher, $renderer);
+        });
+
+        $this->app->bind('Dowilcox\KnpMenu\Menu', function ($app) {
+            return $app['menu'];
         });
     }
 
