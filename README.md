@@ -34,7 +34,7 @@ echo Menu::render($menu);
 ```
 
 Will output:
-```
+```html
 <ul class="nav">
   <li class="first">
     <a href="http://localhost:8000">Home</a>
@@ -49,5 +49,4 @@ Will output:
     <a href="http://localhost:8000/menu">Menu</a>
   </li>
 </ul>
-
 ```
