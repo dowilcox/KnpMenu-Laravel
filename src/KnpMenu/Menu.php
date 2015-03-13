@@ -95,6 +95,16 @@ class Menu implements MenuInterface
     }
 
     /**
+     * Forget a menu
+     *
+     * @param $name
+     */
+    public function forget($name)
+    {
+        $this->collection->forget($name);
+    }
+
+    /**
      * Render passed menu.
      *
      * @param ItemInterface $menu
