@@ -5,7 +5,7 @@ Laravel 5 package to create navigation menus, based on [KnpLabs/KnpMenu](https:/
 ### Installation
 Add to your composer.json file
 ```json
-"dowilcox/knp-menu-laravel": "dev-master"
+"dowilcox/knp-menu-laravel": "1.0.*"
 ```
 
 ### Register the package
@@ -13,11 +13,16 @@ Add to your composer.json file
 In config/app.php add the service provider and alias.
 
 ```php
-'Dowilcox\KnpMenu\MenuServiceProvider',
+Dowilcox\KnpMenu\MenuServiceProvider::class,
 ```
 
 ```php
-'Menu' => 'Dowilcox\KnpMenu\Facades\Menu',
+'Menu' => Dowilcox\KnpMenu\Facades\Menu::class,
+```
+
+#### Publish config
+```bash
+php artisan vendor:publish
 ```
 
 ### Example
