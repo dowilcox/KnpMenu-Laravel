@@ -16,7 +16,7 @@ class MenuServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/menu.php' => config_path('menu.php')
+            __DIR__ . '/../config/menu.php' => config_path('menu.php'),
         ]);
     }
 
@@ -25,6 +25,8 @@ class MenuServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->mergeConfigFrom(__DIR__ . '/../config/menu.php', 'menu');
+
         $this->app->singleton('menu', function ($app) {
             $renderOptions = $app['config']['menu.render'];
             $url = $app['url'];
